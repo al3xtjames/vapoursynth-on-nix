@@ -1,0 +1,13 @@
+diff --git a/meson.build b/meson.build
+index a132ce7..0ff1f2a 100644
+--- a/meson.build
++++ b/meson.build
+@@ -57,7 +57,7 @@ else
+         deps += [avs]
+     endif
+     if libtype in ['vapoursynth', 'both']
+-        installdir = join_paths(vs.get_pkgconfig_variable('libdir'), 'vapoursynth')
++        installdir = 'lib'
+     else
+         installdir = join_paths(avs.get_pkgconfig_variable('libdir'), 'avisynth')
+     endif

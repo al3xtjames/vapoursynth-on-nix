@@ -4,6 +4,7 @@ let
   vapoursynth = pkgs.python310Packages.vapoursynth.withPlugins [
     knlmeanscl
     vapoursynth-bm3d
+    vapoursynth-descale
     vapoursynth-fft3dfilter
     vapoursynth-fmtconv
     vapoursynth-lsmash
