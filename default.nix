@@ -1,7 +1,7 @@
 { pkgs ? import <nixpkgs> { overlays = [ (import ./overlay.nix) ]; } }:
 with pkgs;
 let
-  vapoursynth = pkgs.vapoursynth.withPlugins [
+  vapoursynth = pkgs.python310Packages.vapoursynth.withPlugins [
     knlmeanscl
     vapoursynth-bm3d
     vapoursynth-fft3dfilter
@@ -12,9 +12,9 @@ let
   ];
 in mkShell {
   nativeBuildInputs = [
-    python38
     ffmpeg
     lsmash
+    python310
     vapoursynth
   ];
 }
