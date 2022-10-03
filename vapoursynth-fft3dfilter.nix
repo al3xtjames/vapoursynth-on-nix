@@ -4,13 +4,13 @@
 
 stdenv.mkDerivation rec {
   pname = "vapoursynth-fft3dfilter";
-  version = "8562ea719c82332dc69e032d1174edc3ada0a372";
+  version = "R2";
 
   src = fetchFromGitHub {
     owner  = "myrsloik";
     repo   = "VapourSynth-FFT3DFilter";
     rev    = version;
-    sha256 = "0d1p9hxn0b0ljfmxs9xg3lrcj6a3yijcpmq72n0y33srkxma7wwv";
+    sha256 = "0kwzkhhsw5wsrcxcg11n2gava2wq1w96bvdz6s188c1090c0gm61";
   };
 
   nativeBuildInputs = [ meson ninja pkg-config ];
