@@ -2,13 +2,13 @@
 
 stdenv.mkDerivation rec {
   pname = "vapoursynth-fmtconv";
-  version = "r22";
+  version = "r30";
 
   src = fetchFromGitHub {
     owner  = "EleonoreMizo";
     repo   = "fmtconv";
     rev    = version;
-    sha256 = "1nvanskvh8qv45h7islwgnyrvdkcn7h9jks5fskg4c00aj6bxrrn";
+    sha256 = "0k0szac9rc98rchx8m3v6731kvbkd4hpdnxql6w2ljb8gcvyi1qv";
   };
 
   nativeBuildInputs = [ autoreconfHook ];
