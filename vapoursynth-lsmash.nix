@@ -1,28 +1,33 @@
-{ lib, stdenv, fetchFromGitHub, substituteAll, pkg-config, which
-, ffmpeg, lsmash, vapoursynth
+{ lib, stdenv, fetchFromGitHub, meson, ninja, pkg-config, which
+, ffmpeg, l-smash, vapoursynth
 }:
 
 stdenv.mkDerivation rec {
   pname = "vapoursynth-lsmash";
-  version = "master";
+  version = "vA.3i";
 
   src = fetchFromGitHub {
-    owner  = "VFR-maniac";
+    owner  = "AkarinVS";
     repo   = "L-SMASH-Works";
     rev    = version;
-    sha256 = "1pb8rrh184pxy5calwfnmm02i0by8vc91c07w4ygj50y8yfqa3br";
+    sha256 = "1ca8pylb1fpjr08x1n4w6f18jpnrn8snzd4bjhk10k7wkgd0gvx4";
   };
 
-  nativeBuildInputs = [ pkg-config which ];
+  nativeBuildInputs = [ meson ninja pkg-config which ];
 
-  buildInputs = [ vapoursynth ffmpeg  lsmash ];
+  buildInputs = [ vapoursynth ffmpeg l-smash ];
 
-  prePatch = ''
-    patchShebangs VapourSynth/configure
-  '';
+  patches = [
+    ./patches/fix-export-lsmash.patch
+  ];
 
   preConfigure = ''
     cd VapourSynth
+  '';
+
+  postInstall = ''
+    mkdir -p $out/lib/vapoursynth
+    ln -s $out/lib/libvslsmashsource.so $out/lib/vapoursynth/libvslsmashsource.so
   '';
 
   meta = with lib; {

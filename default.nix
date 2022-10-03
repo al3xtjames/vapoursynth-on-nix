@@ -13,7 +13,7 @@ let
 in mkShell {
   nativeBuildInputs = [
     ffmpeg
-    lsmash
+    l-smash
     python310
     vapoursynth
   ];
