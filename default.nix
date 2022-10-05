@@ -11,6 +11,7 @@ let
     vapoursynth-lsmash
     vapoursynth-mvtools
     vapoursynth-nnedi3
+    vapoursynth-remapframes
   ];
 in mkShell {
   nativeBuildInputs = [

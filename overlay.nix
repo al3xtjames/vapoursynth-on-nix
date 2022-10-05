@@ -7,4 +7,5 @@ self: super: rec {
   vapoursynth-fmtconv = super.callPackage ./vapoursynth-fmtconv.nix {};
   vapoursynth-lsmash = super.callPackage ./vapoursynth-lsmash.nix {};
   vapoursynth-nnedi3 = super.callPackage ./vapoursynth-nnedi3.nix {};
+  vapoursynth-remapframes = super.callPackage ./vapoursynth-remapframes.nix {};
 }
