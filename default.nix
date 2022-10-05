@@ -2,6 +2,7 @@
 with pkgs;
 let
   vapoursynth = pkgs.python310Packages.vapoursynth.withPlugins [
+    getnative
     knlmeanscl
     vapoursynth-bm3d
     vapoursynth-descale

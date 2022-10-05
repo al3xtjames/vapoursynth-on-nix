@@ -1,4 +1,5 @@
 self: super: rec {
+  getnative = super.python310Packages.callPackage ./getnative.nix {};
   knlmeanscl = super.callPackage ./knlmeanscl.nix {};
   vapoursynth-bm3d = super.callPackage ./vapoursynth-bm3d.nix {};
   vapoursynth-descale = super.callPackage ./vapoursynth-descale.nix {};
